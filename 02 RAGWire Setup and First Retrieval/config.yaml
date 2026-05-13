@@ -13,7 +13,7 @@ vectorstore:
   url: "http://localhost:6333"
   collection_name: "finance-rag-ollama"
   use_sparse: true
-  force_recreate: false
+  force_recreate: true
 
 retriever:
   search_type: "hybrid"
