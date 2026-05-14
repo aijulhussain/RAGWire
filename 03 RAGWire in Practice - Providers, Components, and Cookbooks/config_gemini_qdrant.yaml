@@ -1,17 +1,16 @@
 embeddings:
-  provider: "google"
-  model: "models/gemini-embedding-001"   # Stable, recommended for production
-  api_key: "${GOOGLE_API_KEY}"
+  provider: "huggingface"
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"  
 
 llm:
-  provider: "google"
-  model: "gemini-2.5-flash"              # Best price/performance
-  api_key: "${GOOGLE_API_KEY}"
+  provider: "groq"
+  model: "llama-3.3-70b-versatile"              # Best price/performance
+  api_key: "${GROQ_API_KEY}"
 
 vectorstore:
   url: "${QDRANT_URL}"
   api_key: "${QDRANT_API_KEY}"
-  collection_name: "finance-rag-google-qdrant"
+  collection_name: "finance-rag-groq-qdrant"
   use_sparse: true
   force_recreate: false
 

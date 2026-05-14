@@ -1,0 +1,35 @@
+embeddings:
+  provider: "huggingface"
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+
+llm:
+  provider: "groq"
+  model: "llama-3.3-70b-versatile"
+  api_key: "${GROQ_API_KEY}"
+
+vectorstore:
+  provider: "qdrant"
+  url: "${QDRANT_URL}"
+  api_key: "${QDRANT_API_KEY}"
+  collection_name: "finance-rag-groq-qdrant"
+  use_sparse: false
+  force_recreate: false
+  timeout: 120
+
+retriever:
+  search_type: "similarity"
+  top_k: 5
+  auto_filter: false
+
+splitter:
+  chunk_size: 500
+  chunk_overlap: 50
+
+metadata:
+  config_file: "finance_metadata.yaml"
+
+logging:
+  level: "INFO"
+  console_output: true
+  colored: false
+  log_file: "./.log/ragwire.log"

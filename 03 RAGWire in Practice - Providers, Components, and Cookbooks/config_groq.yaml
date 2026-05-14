@@ -1,10 +1,10 @@
 embeddings:
   provider: "huggingface"
-  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"  # Small, fast, good for metadata extraction
 
 llm:
   provider: "groq"
-  model: "qwen/qwen3-32b"            # Latest — fast, affordable, good for metadata extraction
+  model: "llama-3.1-8b-instant"            # Latest — fast, affordable, good for metadata extraction
   api_key: "${GROQ_API_KEY}"
 
 vectorstore:
